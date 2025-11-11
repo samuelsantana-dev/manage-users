@@ -18,6 +18,8 @@ src/
   ├─ utils/
 - [ ] Rodar comandos de instalação padrão
 npm install bcryptjs express dotenv cors multer jsonwebtoken express-validator nodemon
+npm install --save-dev @types/node
+
 - [ ] Adicionar comando para rodar com no servejs dentro de script  "server": "nodemon app.js"
 - [ ] Se usar o typescript configurar o typescript no node
 - [ ] Configurar o app.js ou .ts
@@ -28,6 +30,23 @@ npm install bcryptjs express dotenv cors multer jsonwebtoken express-validator n
 - [ ] Tratar erros e implementar middleware global  
 
 ## Arquivo app.js ou .ts
+
+## 🧾 Checklist – Adicionar TypeScript ao projeto Node.js
+
+- [ ] Instalar dependências principais: npm install typescript ts-node @types/node @types/express --save-dev
+- [ ] Criar o arquivo de configuração do TypeScript: npx tsc --init
+- [ ] No tsconfig.json, ajustar as opções principais: {
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}
+
 
 
 ## 🎨 Frontend

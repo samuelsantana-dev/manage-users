@@ -1,7 +1,8 @@
 require('dotenv').config();
-const express = require('express');
-const connectDb = require('./config');
-const path = require('path');
+import Router from './src/routes/index'
+import express from 'express';
+import path from 'path';
+// const connectDb = require('./config');
 const cors = require('cors');
 
 const port = process.env.PORT || 3000;
@@ -11,12 +12,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const router = require('./routes');
-app.use('/api', router);
+app.use('/api', Router);
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: '*' }));
 
-require('./src/config/index');
+// require('./src/config/index');
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
