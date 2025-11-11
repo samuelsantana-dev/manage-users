@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api', Router);
+app.use('/api', Router); 
 
 app.use(cors({ credentials: true, origin: '*' }));
 
