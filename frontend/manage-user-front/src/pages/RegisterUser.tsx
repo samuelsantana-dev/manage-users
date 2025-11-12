@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import  { useState } from 'react';
 import {
   ThemeProvider,
@@ -27,7 +28,7 @@ export default function RegisterForm() {
   const [errors, setErrors] = useState<User>({});
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (field) => (e) => {
+  const handleChange = (field: any) => (e: any) => {
     setValues((v) => ({ ...v, [field]: e.target.value }));
     setErrors((err) => ({ ...err, [field]: undefined }));
   };
@@ -44,7 +45,7 @@ export default function RegisterForm() {
     return err;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const err = validate();
     setErrors(err);
